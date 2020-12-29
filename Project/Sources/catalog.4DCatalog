@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="events4dWebArea" uuid="1B80B1BDB21D4537A4EA890145F3C388" collation_locale="de">
+	<schema name="DEFAULT_SCHEMA"/>
+</base>
