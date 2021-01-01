@@ -172,6 +172,8 @@
 					"rowHeight": "1em",
 					"headerHeight": "1em",
 					"bottom": 698,
+					"rowFillSource": "getBgColorWaEvents4d(This:C1470.lastErrCode)",
+					"rowStrokeSource": "",
 					"columns": [
 						{
 							"header": {
@@ -280,7 +282,8 @@
 							},
 							"dataSource": "This:C1470.lastErrCode",
 							"dataSourceTypeHint": "number",
-							"stroke": "#dc143c"
+							"stroke": "#dc143c",
+							"numberFormat": "#######"
 						},
 						{
 							"header": {

@@ -15,6 +15,7 @@ Case of
 		Form:C1466.currPageTitle:=WA Get page title:C1036(*; "oWaArea1")
 		
 	: (Form event code:C388=On URL Loading Error:K2:48)
+		WA GET LAST URL ERROR:C1034(*; "oWaArea1"; $url; $description; $errorCode)
 		
 End case 
 
@@ -32,7 +33,6 @@ $obj.time:=String:C10(Current time:C178; HH MM SS:K7:1)
 $obj.currUrl:=WA Get current URL:C1025(*; "oWaArea1")
 $obj.pageTitle:=WA Get page title:C1036(*; "oWaArea1")
 $obj.lastfilterUrl:=WA Get last filtered URL:C1035(*; "oWaArea1")
-WA GET LAST URL ERROR:C1034(*; "oWaArea1"; $url; $description; $errorCode)
 $obj.lastErrUrl:=$url
 $obj.lastErrDescript:=$description
 $obj.lastErrCode:=$errorCode
