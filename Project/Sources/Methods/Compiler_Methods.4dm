@@ -13,3 +13,4 @@ C_TEXT:C284(yGet4DVersionShortname; $0)
 //getBgColorWaEvents4d
 C_TEXT:C284(getBgColorWaEvents4d; $0)
 C_LONGINT:C283(getBgColorWaEvents4d; $1)
+C_LONGINT:C283(getBgColorWaEvents4d; $2)

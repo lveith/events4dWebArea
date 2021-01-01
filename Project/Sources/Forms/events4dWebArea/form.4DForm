@@ -172,7 +172,7 @@
 					"rowHeight": "1em",
 					"headerHeight": "1em",
 					"bottom": 698,
-					"rowFillSource": "getBgColorWaEvents4d(This:C1470.lastErrCode)",
+					"rowFillSource": "getBgColorWaEvents4d(This:C1470.lastErrCode; This:C1470.evCode)",
 					"rowStrokeSource": "",
 					"columns": [
 						{
@@ -431,11 +431,24 @@
 					"style": "toolbar",
 					"method": "ObjectMethods/oBtnOpenWebInspector.4dm",
 					"sizingX": "move"
+				},
+				"oFilterUrlActive": {
+					"type": "checkbox",
+					"text": "Filter URL",
+					"top": 30,
+					"left": 60,
+					"width": 78,
+					"height": 12,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/oFilterUrlActive.4dm",
+					"dataSource": "Form:C1466.filterUrlActive"
 				}
 			}
 		}
 	],
-	"geometryStamp": 6216,
+	"geometryStamp": 6238,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

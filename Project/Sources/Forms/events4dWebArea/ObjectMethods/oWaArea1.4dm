@@ -2,7 +2,7 @@
 
 C_TEXT:C284($resultTxt)
 C_OBJECT:C1216($obj)
-C_TEXT:C284($url; $description)
+C_TEXT:C284($url; $description; $lastFilteredUrl)
 C_LONGINT:C283($errorCode)
 
 Case of 
@@ -16,6 +16,15 @@ Case of
 		
 	: (Form event code:C388=On URL Loading Error:K2:48)
 		WA GET LAST URL ERROR:C1034(*; "oWaArea1"; $url; $description; $errorCode)
+		
+	: (Form event code:C388=On URL Filtering:K2:49)
+		$lastFilteredUrl:=WA Get last filtered URL:C1035(*; "oWaArea1")
+		
+	: (Form event code:C388=On Window Opening Denied:K2:51)
+		$lastFilteredUrl:=WA Get last filtered URL:C1035(*; "oWaArea1")
+		
+	: (Form event code:C388=On Open External Link:K2:50)
+		$lastFilteredUrl:=WA Get last filtered URL:C1035(*; "oWaArea1")
 		
 End case 
 
@@ -32,7 +41,7 @@ $obj.evObjName:=FORM Event:C1606.objectName
 $obj.time:=String:C10(Current time:C178; HH MM SS:K7:1)
 $obj.currUrl:=WA Get current URL:C1025(*; "oWaArea1")
 $obj.pageTitle:=WA Get page title:C1036(*; "oWaArea1")
-$obj.lastfilterUrl:=WA Get last filtered URL:C1035(*; "oWaArea1")
+$obj.lastfilterUrl:=$lastFilteredUrl
 $obj.lastErrUrl:=$url
 $obj.lastErrDescript:=$description
 $obj.lastErrCode:=$errorCode

@@ -6,6 +6,11 @@ Case of
 	: (Form event code:C388=On Clicked:K2:4)
 		TRACE:C157
 		Case of 
+			: (False:C215)
+				ARRAY TEXT:C222($filters; 0)
+				ARRAY BOOLEAN:C223($AllowDeny; 0)
+				WA GET URL FILTERS:C1031(*; "oWaArea1"; $filters; $AllowDeny)
+				
 			: (False:C215)  // step in here if you like
 				// ...insert your own debug examples
 				
