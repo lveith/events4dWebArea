@@ -1,4 +1,4 @@
-// OM: "events4dWebArea".oBtnTrace
+﻿// OM: "events4dWebArea".oBtnTrace
 // Only Trace and later here may be some code-examples to debug
 
 
@@ -13,16 +13,6 @@ Case of
 				
 			: (False:C215)
 				Form:C1466.colPageContWaEvents4d:=Form:C1466.colPageContWaEvents4d.query("evCode = 47")
-				
-			: (False:C215)
-				LISTBOX SELECT ROWS:C1715(*; "oColPageContWaEvents4dG"; New collection:C1472(Form:C1466.colPageContWaEvents4d[0]); lk replace selection:K53:1)
-				ALERT:C41(String:C10(Form:C1466.pageContWaEvents4dCurrEl.id))
-				Form:C1466.colPageContWaEvents4d:=Form:C1466.colPageContWaEvents4d  // refresh/redraw lisbox collection
-				Form:C1466.pageContWaEvents4dCurrSel:=Form:C1466.pageContWaEvents4dCurrSel
-				
-				// Form.pageContWaEvents4dCurrEl
-				// Form.pageContWaEvents4dCurrPos
-				// Form.pageContWaEvents4dCurrSel
 				
 			: (False:C215)  // step in here if you like
 				// ...insert your own debug examples

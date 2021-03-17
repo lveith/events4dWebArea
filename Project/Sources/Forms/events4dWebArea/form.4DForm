@@ -47,7 +47,7 @@
 					"fontWeight": "bold",
 					"fontSize": 18,
 					"stroke": "#da70d6",
-					"tooltip": "Cancel",
+					"tooltip": "Trace",
 					"method": "ObjectMethods/oBtnTrace.4dm",
 					"sizingX": "move"
 				},
@@ -155,9 +155,9 @@
 				"oColPageContWaEvents4d": {
 					"type": "listbox",
 					"left": 6,
-					"top": 49,
+					"top": 229,
 					"width": 239,
-					"height": 649,
+					"height": 469,
 					"events": [
 						"onClick",
 						"onHeaderClick",
@@ -168,13 +168,32 @@
 					"sizingY": "grow",
 					"resizingMode": "legacy",
 					"listboxType": "collection",
-					"dataSource": "Form:C1466.colPageContWaEvents4d",
+					"dataSource": "Form:C1466.pageContWaEvents4dCurrEl.items",
 					"rowHeight": "1em",
 					"headerHeight": "1em",
 					"bottom": 698,
 					"rowFillSource": "getBgColorWaEvents4d(This:C1470.lastErrCode; This:C1470.evCode)",
 					"rowStrokeSource": "",
 					"columns": [
+						{
+							"header": {
+								"text": "id",
+								"name": "oHeadEvId"
+							},
+							"name": "oColEvId",
+							"footer": {
+								"name": "Fußteil11"
+							},
+							"width": 34,
+							"minWidth": 34,
+							"maxWidth": 100,
+							"dataSource": "This:C1470.id",
+							"verticalAlign": "middle",
+							"truncateMode": "none",
+							"wordwrap": "normal",
+							"dataSourceTypeHint": "number",
+							"enterable": false
+						},
 						{
 							"header": {
 								"text": "time",
@@ -191,7 +210,8 @@
 							"verticalAlign": "middle",
 							"truncateMode": "none",
 							"wordwrap": "normal",
-							"dataSourceTypeHint": "text"
+							"dataSourceTypeHint": "text",
+							"enterable": false
 						},
 						{
 							"header": {
@@ -228,17 +248,6 @@
 						},
 						{
 							"header": {
-								"name": "oHeadEvObjName",
-								"text": "evObjName"
-							},
-							"name": "oColEvObjName",
-							"footer": {
-								"name": "Fußteil3"
-							},
-							"dataSource": "This:C1470.evObjName"
-						},
-						{
-							"header": {
 								"name": "oHeadCurrUrl",
 								"text": "currUrl"
 							},
@@ -261,14 +270,14 @@
 						},
 						{
 							"header": {
-								"name": "oHeadLastfilterUrl",
-								"text": "lastfilterUrl"
+								"name": "oHeadlastFilterUrl",
+								"text": "lastFilterUrl"
 							},
-							"name": "oColLastfilterUrl",
+							"name": "oCollastFilterUrl",
 							"footer": {
 								"name": "Fußteil6"
 							},
-							"dataSource": "This:C1470.lastfilterUrl"
+							"dataSource": "This:C1470.lastFilterUrl"
 						},
 						{
 							"header": {
@@ -311,6 +320,17 @@
 							"dataSource": "This:C1470.lastErrUrl",
 							"width": 400,
 							"stroke": "#dc143c"
+						},
+						{
+							"header": {
+								"name": "oHeadEvObjName",
+								"text": "evObjName"
+							},
+							"name": "oColEvObjName",
+							"footer": {
+								"name": "Fußteil3"
+							},
+							"dataSource": "This:C1470.evObjName"
 						}
 					]
 				},
@@ -360,7 +380,8 @@
 						"onOpenExternalLink",
 						"onWindowOpeningDenied"
 					],
-					"progressSource": "Form.progressWaWaEvents4d"
+					"progressSource": "Form.progressWaWaEvents4d",
+					"urlSource": "Form.currUrlWaEvents4d"
 				},
 				"oBtnHistoryForwardWaEvents4d": {
 					"type": "button",
@@ -436,19 +457,156 @@
 					"type": "checkbox",
 					"text": "Filter URL",
 					"top": 30,
-					"left": 60,
-					"width": 78,
+					"left": 119,
+					"width": 64,
 					"height": 12,
 					"events": [
 						"onClick"
 					],
 					"method": "ObjectMethods/oFilterUrlActive.4dm",
-					"dataSource": "Form:C1466.filterUrlActive"
+					"dataSource": "Form:C1466.filterUrlActive",
+					"fontSize": 9
+				},
+				"oBtnShow": {
+					"type": "button",
+					"text": "⚠️",
+					"top": 27,
+					"left": 37,
+					"width": 22,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "toolbar",
+					"method": "ObjectMethods/oBtnShow.4dm"
+				},
+				"oColPageContWaEvents4dG": {
+					"type": "listbox",
+					"left": 6,
+					"top": 49,
+					"width": 239,
+					"height": 169,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.colPageContWaEvents4d",
+					"rowHeight": "1em",
+					"headerHeight": "1em",
+					"bottom": 218,
+					"rowFillSource": "",
+					"rowStrokeSource": "",
+					"currentItemSource": "Form:C1466.pageContWaEvents4dCurrEl",
+					"currentItemPositionSource": "Form:C1466.pageContWaEvents4dCurrPos",
+					"selectedItemsSource": "Form:C1466.pageContWaEvents4dCurrSel",
+					"selectionMode": "single",
+					"columns": [
+						{
+							"header": {
+								"text": "id",
+								"name": "oHeadEvIdG"
+							},
+							"name": "oColEvIdG",
+							"footer": {
+								"name": "Fußteil13"
+							},
+							"width": 34,
+							"minWidth": 34,
+							"maxWidth": 100,
+							"dataSource": "This:C1470.id",
+							"verticalAlign": "middle",
+							"truncateMode": "none",
+							"wordwrap": "normal",
+							"dataSourceTypeHint": "number",
+							"enterable": false
+						},
+						{
+							"header": {
+								"text": "time",
+								"name": "oHeadEvTimeG"
+							},
+							"name": "oColEvTimeG",
+							"footer": {
+								"name": "Fußteil12"
+							},
+							"width": 60,
+							"minWidth": 50,
+							"maxWidth": 100,
+							"dataSource": "This:C1470.time",
+							"verticalAlign": "middle",
+							"truncateMode": "none",
+							"wordwrap": "normal",
+							"dataSourceTypeHint": "text",
+							"enterable": false
+						},
+						{
+							"header": {
+								"name": "oHeadPageTitleG",
+								"text": "pageTitle"
+							},
+							"name": "oColPageTitleG",
+							"footer": {
+								"name": "Fußteil18"
+							},
+							"dataSource": "This:C1470.pageTitle",
+							"width": 174
+						},
+						{
+							"header": {
+								"name": "oHeadCurrUrlG",
+								"text": "currUrl"
+							},
+							"name": "oColCurrUrlG",
+							"footer": {
+								"name": "Fußteil17"
+							},
+							"dataSource": "This:C1470.currUrl",
+							"width": 216
+						},
+						{
+							"header": {
+								"name": "oHeadEvObjNameG",
+								"text": "evObjName"
+							},
+							"name": "oColEvObjNameG",
+							"footer": {
+								"name": "Fußteil16"
+							},
+							"dataSource": "This:C1470.evObjName"
+						}
+					]
+				},
+				"Splitter1": {
+					"type": "splitter",
+					"left": 0,
+					"top": 223,
+					"width": 246,
+					"height": 3,
+					"sizingX": "grow"
+				},
+				"oBtnInfos": {
+					"type": "button",
+					"text": "ⓘ",
+					"top": 27,
+					"left": 68,
+					"width": 22,
+					"height": 19,
+					"events": [
+						"onClick"
+					],
+					"style": "toolbar",
+					"method": "ObjectMethods/oBtnInfos.4dm"
 				}
 			}
 		}
 	],
-	"geometryStamp": 6238,
+	"geometryStamp": 6404,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

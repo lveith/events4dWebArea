@@ -1,0 +1,110 @@
+﻿{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 3,
+	"bottomMargin": 3,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "generic infos",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {
+				"oBtnTrace": {
+					"type": "button",
+					"text": "#",
+					"top": 1,
+					"left": 321,
+					"width": 27,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"fontWeight": "bold",
+					"fontSize": 18,
+					"stroke": "#da70d6",
+					"tooltip": "Cancel",
+					"method": "ObjectMethods/oBtnTrace.4dm",
+					"sizingX": "move"
+				},
+				"oBtnCancel": {
+					"type": "button",
+					"text": "✗",
+					"top": 1,
+					"left": 354,
+					"width": 27,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"fontWeight": "bold",
+					"fontSize": 18,
+					"stroke": "#dc143c",
+					"tooltip": "Close",
+					"method": "ObjectMethods/oBtnCancel.4dm",
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "[Esc]",
+					"sizingX": "move"
+				}
+			}
+		},
+		{
+			"objects": {
+				"oGenericLisbox": {
+					"type": "listbox",
+					"left": 3,
+					"top": 29,
+					"width": 378,
+					"height": 248,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"listboxType": "collection",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"dataSource": "Form:C1466.colGenericLB",
+					"columns": []
+				}
+			}
+		}
+	],
+	"geometryStamp": 107,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

@@ -44,9 +44,7 @@ Case of
 		$chooseItemPos:=Pop up menu:C542($menuItems)
 		
 		If (($chooseItemPos>0) & ($chooseItemPos<=$col.length))
-			Form:C1466.colPageContWaEvents4d:=New collection:C1472
-			Form:C1466.currUrlWaEvents4d:=$col[$chooseItemPos-1]
-			WA OPEN URL:C1020(*; "oWaArea1"; $col[$chooseItemPos-1])
+			waLoadNewUrl($col[$chooseItemPos-1])
 		End if 
 		
 End case 
